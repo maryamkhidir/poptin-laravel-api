@@ -27,6 +27,7 @@ if(i){
     .then((data) => {
 
       let d = data
+
       let p = document.createElement('div');
       p.setAttribute('class','popup');
       p.setAttribute('id', 'pixel-popup');
@@ -70,8 +71,6 @@ if(i){
       t.setAttribute('class','title');
       t.innerHTML = d.title
 
-      let f = document.createElement('form');f.action = "#";f.method = "get";
-
       let i = document.createElement('input');
       i.placeholder = d.placeholder
 
@@ -79,12 +78,38 @@ if(i){
       b.type = "button";
       b.innerHTML = d.button_text
 
-      f.append(i,b)
       let ft = document.createElement('div');
       ft.innerHTML = d.footnote
 
-      pccw.append(ts,t,f,ft)
+      //display according to order
+      let order = JSON.parse(d.el_order)
+      let k = []
+      for(let i=0; i<order.length; i++){
+         k.push(order[i].name)
+      }
+      for(n of k){
+        switch (n) {
+          case 'Title':
+            pccw.appendChild(t);
+            break;
+          case 'Badge':
+            pccw.appendChild(ts);
+            break;
+          case 'Input':
+            pccw.appendChild(i);
+            break;
+          case 'Subtext':
+            pccw.appendChild(ft);
+            break;
+          case 'Button':
+            pccw.appendChild(b);
+            break;
+          default:
+            break;
+          }
+      }
 
+      //add wrapper
       let w = document.createElement('div');
       w.setAttribute('class','poptin-wrapper')
       w.appendChild(p)
