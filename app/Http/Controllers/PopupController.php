@@ -68,7 +68,7 @@ class PopupController extends Controller
      */
     public function show($id)
     {
-        return Popup::findorFail($id);
+        return Popup::where('popup_id', $id)->firstOrFail();
     }
 
     /**

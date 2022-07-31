@@ -1,0 +1,96 @@
+.poptin-wrapper {
+  position: fixed;
+  inset: 0px;
+  z-index: 2147483647;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins';
+}
+
+.poptin-wrapper .popup{
+  max-width: 500px;
+  max-height: 500px;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-out 0s;
+  left: 50%;
+  margin-left: -250px;
+  top: 120px
+}
+.poptin-wrapper .popup--container {
+  display: flex;
+  color: #222;
+  background: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+.poptin-wrapper .popup--container__inner {
+  width: calc(100% - 26px);
+  height: calc(100% - 26px);
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.poptin-wrapper .popup--container__content {
+  padding: 1.25rem 3.75rem;
+}
+.poptin-wrapper .popup--container__content-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.poptin-wrapper .popup--container__content-wrapper .three-stars{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.poptin-wrapper .popup--container__content-wrapper .title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #FFF;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+.poptin-wrapper .popup--container__content-wrapper input {
+  border: unset;
+  border-radius: 16px;
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-family: "Poppins";
+}
+.poptin-wrapper .popup--container__content-wrapper button {
+  width: 100%;
+  background-color: #4d4c4e;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 12px 12px;
+  border-radius: 16px;
+  border: unset;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: "Poppins";
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.poptin-wrapper .popup--container__content-wrapper div {
+  color: #fff;
+}
+.poptin-wrapper .popup--container__content-wrapper .three-stars span:first-child, .poptin-wrapper .popup--container__content-wrapper .three-stars span:last-child  {
+  margin-top: 22px;
+  width: 28px;
+  height: 28px;
+}
+.poptin-wrapper .popup--container__content-wrapper .three-stars span{
+  width: 42px;
+  height: 42px;
+}
