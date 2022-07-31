@@ -23,6 +23,7 @@ class CreatePopupsTable extends Migration
             $table->string('footnote');
             $table->string('badgeColor');
             $table->string('backgroundcolor');
+            $table->string('el_order');
         });
     }
 

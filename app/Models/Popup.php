@@ -15,6 +15,7 @@ class Popup extends Model
         'placeholder',
         'button_text',
         'footnote',       
-        'badgecolor'       
+        'badgecolor',
+        'el_order'       
     ];
 }

@@ -43,7 +43,8 @@ class PopupController extends Controller
             'placeholder' => 'required',
             'button_text' => 'required',
             'footnote' => 'required',       
-            'badgecolor' => 'required'
+            'badgecolor' => 'required',
+            'el_order' => 'required'
         ]);
   
         $popup = new Popup;
@@ -54,6 +55,7 @@ class PopupController extends Controller
         $popup->button_text = $request->input('button_text');
         $popup->footnote = $request->input('footnote');
         $popup->badgecolor = $request->input('badgecolor');
+        $popup->el_order = $request->input('el_order');
 
         $popup->save(); //storing values as an object
 
@@ -98,7 +100,8 @@ class PopupController extends Controller
             'placeholder' => 'required',
             'button_text' => 'required',
             'footnote' => 'required',       
-            'badgecolor' => 'required'
+            'badgecolor' => 'required',
+            'el_order' => 'required'
         ]);
   
         $popup = Popup::findorFail($id); // uses the id to search values that need to be updated.
@@ -109,6 +112,7 @@ class PopupController extends Controller
         $popup->button_text = $request->input('button_text');
         $popup->footnote = $request->input('footnote');
         $popup->badgecolor = $request->input('badgecolor');
+        $popup->el_order = $request->input('el_order');
 
         $popup->save();//saves the values in the database. The existing data is overwritten.
         return $popup; // retrieves the updated object from the database
