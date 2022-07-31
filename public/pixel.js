@@ -14,7 +14,7 @@ var pi = 'poptin-pixel-id'
 let i = u.searchParams.get(pi)
 
 if(i){
-  var g = `${u}api/popups/${i}`; var opt = {mode:'cors'}
+  var g = `${u}api/popups/${i}`; var opt = {}
   fetch(g,opt)
     .then((response) => {
       if(!response.ok) {
