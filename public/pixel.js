@@ -1,20 +1,22 @@
-var w = window.location; var h = `${w.protocol}://${w.hostname}`; var p = w.port;
+var w = window.location; var h = `${w.protocol}//${w.hostname}`; var p = w.port;
 if(p != "80") h= `${h}:${p}`
+
 var e = document.createElement("link");
 e.setAttribute("rel", "stylesheet");
 e.setAttribute("type", "text/css");
 var s = document.getElementById("poptin-pixel-script").src; var u = new URL(s);
 if(u === null ||u === undefined) u = new URL(s,h);
-console.log(u)
 
-e.setAttribute("href", `${u}poptin-pixel.css`);
+var v = u.origin
+e.setAttribute("href", `${v}/poptin-pixel.css`);
 document.getElementsByTagName("head")[0].appendChild(e);
 
 var pi = 'poptin-pixel-id'
 let i = u.searchParams.get(pi)
 
 if(i){
-  var g = `${u}api/popups/${i}`; var opt = {}
+  var g = `${v}/api/popups/${i}`; var opt = {mode:'cors'}
+
   fetch(g,opt)
     .then((response) => {
       if(!response.ok) {
